@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javier - Corte de Pasto | Santo Tomé</title>
+    <link rel="stylesheet" href="{% static 'portal/css/estilos.css' %}">
+</head>
+<body>
+
+    {% include 'portal/navbar.html' %}
+
+    <main class="contenedor-principal">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <a href="https://wa.me/5493425191340" class="btn-whatsapp" target="_blank">
+        💬 Consultar por WhatsApp
+    </a>
+
+    <footer>
+        <p>&copy; Javier - Servicio de Corte de Pasto en Santo Tomé, Santa Fe.</p>
+    </footer>
+
+</body>
+</html>

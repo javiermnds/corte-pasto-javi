@@ -1,0 +1,22 @@
+{% extends 'portal/base.html' %}
+
+{% block content %}
+<section class="galeria-seccion">
+    <h2>Trabajos Realizados</h2>
+    <p>Revisa la calidad de nuestro servicio antes de contratar.</p>
+
+    <div class="galeria-grid">
+        {% for foto in fotos %}
+            <div class="tarjeta-trabajo">
+                <img src="{{ foto.imagen.url }}" alt="{{ foto.titulo }}">
+                <h3>{{ foto.titulo }}</h3>
+                {% if foto.descripcion %}
+                    <p>{{ foto.descripcion }}</p>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p class="sin-fotos">Próximamente estaré subiendo fotos de mis últimos trabajos.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

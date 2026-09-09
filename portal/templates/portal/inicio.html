@@ -1,0 +1,49 @@
+{% extends 'portal/base.html' %}
+
+{% block content %}
+<section class="hero">
+    <h1>Mantenimiento y Corte de Pasto Profesional</h1>
+    <p class="ubicacion">📍 Santo Tomé, Santa Fe</p>
+    <p class="presentacion">
+        Hola, soy Javier. Tengo 17 años y soy alumno de la Escuela Secundaria N° 443 "Enrique José Muzzio". 
+        Ofrezco un servicio de corte de pasto prolijo, puntual y garantizado para vecinos y empresas de la zona.
+    </p>
+    <a href="https://wa.me/5493425191340" class="btn-cta" target="_blank">Pedir Presupuesto Sin Cargo</a>
+</section>
+
+{% if mensaje_exito %}
+    <div class="alerta-exito">
+        ¡Muchas gracias! Recibí tu consulta. Me pondré en contacto contigo a la brevedad.
+    </div>
+{% endif %}
+
+<section class="servicios">
+    <h2>Servicios</h2>
+    <div class="grid-servicios">
+        <div class="card">
+            <h3>🌱 Corte y Bordeado</h3>
+            <p>Dejamos el césped parejo y definimos canteros, bordes y veredas.</p>
+        </div>
+        <div class="card">
+            <h3>🧹 Limpieza de Restos</h3>
+            <p>Recogemos y embolsamos los restos para dejar tu patio impecable.</p>
+        </div>
+        <div class="card">
+            <h3>🌿 Desmalezado</h3>
+            <p>Puesta a punto para terrenos altos o descuidados.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contacto">
+    <h2>Solicitar Presupuesto</h2>
+    <form method="POST" class="form-contacto">
+        {% csrf_token %}
+        <input type="text" name="nombre" placeholder="Tu Nombre" required>
+        <input type="text" name="barrio" placeholder="Barrio (ej: Centro, Adelina, etc.)" required>
+        <input type="tel" name="telefono" placeholder="Teléfono de Contacto" required>
+        <textarea name="mensaje" rows="4" placeholder="¿Qué trabajo necesitas realiza?" required></textarea>
+        <button type="submit" class="btn-enviar">Enviar Consulta</button>
+    </form>
+</section>
+{% endblock %}
