@@ -55,20 +55,4 @@
   
   <button type="submit" class="btn-submit">Enviar Consulta</button>
 </form>
-
-<script>
-function enviarAWhatsApp(event) {
-  event.preventDefault();
-  
-  const nombre = document.getElementById('nombre').value;
-  const barrio = document.getElementById('barrio').value;
-  const telefono = document.getElementById('telefono').value;
-  const mensaje = document.getElementById('mensaje').value;
-  
-  const texto = `Hola Javier! Mi nombre es ${nombre}. Vivo en ${barrio}. Mi contacto es ${telefono}. Necesito: ${mensaje}`;
-  const url = `https://wa.me/5493425191340?text=${encodeURIComponent(texto)}`;
-  
-  window.open(url, '_blank');
-}
-</script>
 {% endblock %}
